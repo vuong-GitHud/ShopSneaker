@@ -174,7 +174,7 @@
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <ul class="link-list-opt no-bdr">
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="@Url.Action("Edit", new {id = item.Id})">
                                                                 <em class="icon ni ni-edit"></em><span>Edit Product</span>
                                                             </a>
                                                         </li>
@@ -184,12 +184,12 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a>
                                                                 <em class="icon ni ni-activity-round"></em><span>Product Orders</span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="@Url.Action("Delete", new {id = item.Id})">
                                                                 <em class="icon ni ni-trash"></em><span>Remove Product</span>
                                                             </a>
                                                         </li>

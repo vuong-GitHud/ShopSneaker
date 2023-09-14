@@ -94,45 +94,59 @@ namespace ShopSneaker.Admin.Controllers
         }
 
         // GET: ProductController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            var product = await _context.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
+            if (product != null)
+            {
+                var result = _mapper.Map<UpdateProductVm>(product);
+                return View(result);
+            }
+            return RedirectToAction("Index");
         }
 
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(UpdateProductVm model)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                return View(model);
             }
-            catch
+            var product = await _context.Products.FindAsync(model.Id);
+            if (product == null)
             {
-                return View();
+                return View(model);
             }
+            product.Name = model.Name;
+            product.Description = model.Description;
+            product.Price = model.Price;
+            product.CategoryId = model.CategoryId;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         // GET: ProductController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+            }
+
+            var productImg = await _context.ProductImgs.Where(x => x.ProductId == id).FirstOrDefaultAsync();
+            if (productImg != null)
+            {
+                _context.ProductImgs.Remove(productImg);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
 
-        // POST: ProductController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
