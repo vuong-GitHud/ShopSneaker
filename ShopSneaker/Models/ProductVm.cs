@@ -16,4 +16,6 @@ public class ProductVm
     public int CategoryId { get; set; }
 
     public string Category { get; set; }
+
+    public IFormFile Files { get; set; }
 }

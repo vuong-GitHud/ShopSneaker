@@ -15,4 +15,8 @@
     <ProjectReference Include="..\ShopSneaker\ShopSneaker.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="uploads\" />
+  </ItemGroup>
+
 </Project>

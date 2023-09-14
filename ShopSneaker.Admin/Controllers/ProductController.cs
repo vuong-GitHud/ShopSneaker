@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopSneaker.Areas.Identity.Data;
+using ShopSneaker.Data.Entities;
 using ShopSneaker.Models;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSneaker.Admin.Controllers
 {
@@ -11,11 +13,15 @@ namespace ShopSneaker.Admin.Controllers
     {
         private readonly ShopSneakerContext _context;
         private readonly IMapper _mapper;
+        private IHostingEnvironment _environment;
 
-        public ProductController(ShopSneakerContext context, IMapper mapper)
+
+        public ProductController(ShopSneakerContext context, IMapper mapper, IHostingEnvironment environment)
         {
             _context = context;
             _mapper = mapper;
+            _environment = environment;
+
         }
         // GET: ProductController
         public async Task<IActionResult> Index()
@@ -46,9 +52,30 @@ namespace ShopSneaker.Admin.Controllers
         }
 
         // GET: ProductController/Create
-        public ActionResult Create()
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Create(ProductVm model)
+        {
+            if (model.Files != null)
+            {
+                var file = Path.Combine(_environment.ContentRootPath, "uploads", model.Files.FileName);
+                using (var fileStream = new FileStream (file, FileMode.Create)) {
+                    await model.Files.CopyToAsync (fileStream);
+                }
+                var fileName = Path.GetFileName(model.Files.FileName);
+                model.ThumbPath = "uploads/" + fileName;
+            }
+                model.CreateDate = DateTime.Now;
+                model.Rating = 5;
+                _context.Products.Add(_mapper.Map<Product>(model));
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Create");
         }
 
         // POST: ProductController/Create

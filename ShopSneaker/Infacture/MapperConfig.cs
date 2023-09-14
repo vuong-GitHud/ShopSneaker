@@ -9,5 +9,6 @@ public class MapperConfig : Profile
     public MapperConfig()
     {
         CreateMap<Product, ProductVm>();
+        CreateMap<ProductVm, Product>();
     }
 }
