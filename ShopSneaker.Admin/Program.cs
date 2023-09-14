@@ -1,6 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ShopSneaker.Areas.Identity.Data;
+using ShopSneaker.Data.Entities;
 using ShopSneaker.Infacture;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShopSneakerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShopSneakerContextConnection")));
 builder.Services.AddAutoMapper(typeof(MapperConfig));
-
+builder.Services.AddIdentity<AppUser, AppRole>()
+    .AddEntityFrameworkStores<ShopSneakerContext>()
+    .AddDefaultTokenProviders();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
