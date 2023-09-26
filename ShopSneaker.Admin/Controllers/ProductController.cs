@@ -60,17 +60,18 @@ namespace ShopSneaker.Admin.Controllers
             if (model.Files != null)
             {
                 var file = Path.Combine(_environment.ContentRootPath, "uploads", model.Files.FileName);
-                using (var fileStream = new FileStream (file, FileMode.Create)) {
-                    await model.Files.CopyToAsync (fileStream);
+                using (var fileStream = new FileStream(file, FileMode.Create))
+                {
+                    await model.Files.CopyToAsync(fileStream);
                 }
                 var fileName = Path.GetFileName(model.Files.FileName);
                 model.ThumbPath = "uploads/" + fileName;
             }
-                model.CreateDate = DateTime.Now;
-                model.Rating = 5;
-                _context.Products.Add(_mapper.Map<Product>(model));
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Create");
+            model.CreateDate = DateTime.Now;
+            model.Rating = 5;
+            _context.Products.Add(_mapper.Map<Product>(model));
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Create");
         }
 
         // POST: ProductController/Create
@@ -119,7 +120,7 @@ namespace ShopSneaker.Admin.Controllers
             product.Description = model.Description;
             product.Price = model.Price;
             product.CategoryId = model.CategoryId;
-            await _context.SaveChangesAsync();
+            _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
