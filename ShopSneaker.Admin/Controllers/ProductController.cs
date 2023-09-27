@@ -69,7 +69,7 @@ namespace ShopSneaker.Admin.Controllers
             }
             model.CreateDate = DateTime.Now;
             model.Rating = 5;
-            _context.Products.Add(_mapper.Map<Product>(model));
+            await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
             return RedirectToAction("Create");
         }
@@ -120,7 +120,7 @@ namespace ShopSneaker.Admin.Controllers
             product.Description = model.Description;
             product.Price = model.Price;
             product.CategoryId = model.CategoryId;
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
