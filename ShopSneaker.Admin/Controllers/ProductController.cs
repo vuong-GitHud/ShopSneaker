@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopSneaker.Areas.Identity.Data;
@@ -9,7 +9,7 @@ using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSneaker.Admin.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private readonly ShopSneakerContext _context;
         private readonly IMapper _mapper;
@@ -44,12 +44,7 @@ namespace ShopSneaker.Admin.Controllers
             }).ToListAsync();
             return View(data);
         }
-
-        // GET: ProductController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        
 
         // GET: ProductController/Create
         [HttpGet]
