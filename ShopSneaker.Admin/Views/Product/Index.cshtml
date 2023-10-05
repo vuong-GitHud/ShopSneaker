@@ -79,13 +79,13 @@
                                 <span>Name</span>
                             </div>
                             <div class="nk-tb-col">
-                                <span>SKU</span>
+                                <span>ID</span>
                             </div>
                             <div class="nk-tb-col">
                                 <span>Price</span>
                             </div>
                             <div class="nk-tb-col">
-                                <span>Stock</span>
+                                <span>DateCreate</span>
                             </div>
                             <div class="nk-tb-col tb-col-md">
                                 <span>Category</span>
@@ -179,7 +179,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="@Url.Action("Index", "Product")">
+                                                            <a href="@Url.Action("Detail", new {id = item.Id})">
                                                                 <em class="icon ni ni-eye"></em><span>View Product</span>
                                                             </a>
                                                         </li>

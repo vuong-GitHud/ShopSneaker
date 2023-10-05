@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Data.Entities;
 using ShopSneaker.Models;
+using System.Linq;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace ShopSneaker.Admin.Controllers
@@ -44,7 +45,19 @@ namespace ShopSneaker.Admin.Controllers
             }).ToListAsync();
             return View(data);
         }
-        
+
+        // GET: ProductController/Details/5
+        public async Task<ActionResult> Detail(int id)
+        {
+            //var query = from p in _context.Products
+            //            join c in _context.Categories on p.CategoryId equals c.Id into pc
+            //            from c in pc.DefaultIfEmpty()
+            //            where p.Id == id
+            //            select new { p, pc, c };
+            //var result = query.FirstOrDefault();
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            return View(product);
+        }
 
         // GET: ProductController/Create
         [HttpGet]
@@ -71,7 +84,7 @@ namespace ShopSneaker.Admin.Controllers
             model.Rating = 5;
             await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
         }
 
         // POST: ProductController/Create
