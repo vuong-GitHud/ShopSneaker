@@ -284,7 +284,7 @@ namespace ShopSneaker.Migrations
             migrationBuilder.InsertData(
                 table: "AppRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
-                values: new object[] { new Guid("7225da6b-65fc-4b04-8f46-fd3176512eff"), "46bacf9a-5a8c-424a-bc51-0e8414b7d889", "Admin Role", "admin", "admin" });
+                values: new object[] { new Guid("7225da6b-65fc-4b04-8f46-fd3176512eff"), "19307867-5641-4390-96f0-776c6790184b", "Admin Role", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AppUserRoles",
@@ -294,7 +294,7 @@ namespace ShopSneaker.Migrations
             migrationBuilder.InsertData(
                 table: "AppUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DOB", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("d60a3a17-4053-42bb-a858-f44e7825bdf4"), 0, "ca8a3006-e6be-44cc-97c2-90a35c266b28", new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin.vuong@gmail.com", true, "Pham Xuan Vuong", false, null, "admin.vuong@gmail.com", "admin", "AQAAAAEAACcQAAAAEDXjWKJReDikcnV4ae+vHRLm1Bh1J/VdYKkzUDl1156ZA+jjxPRM71P0vBWSq9jS3w==", null, false, "", false, "admin" });
+                values: new object[] { new Guid("d60a3a17-4053-42bb-a858-f44e7825bdf4"), 0, "318bdeb9-ec05-47d7-93d0-c9a5270837f3", new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin.vuong@gmail.com", true, "Pham Xuan Vuong", false, null, "admin.vuong@gmail.com", "admin", "AQAAAAEAACcQAAAAEB5Cuka7tDzqqzIYdauEsurj4rgxjsfsY45Uf3QC8dqcNJn/LyThACeAELUEtATSsA==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -302,18 +302,24 @@ namespace ShopSneaker.Migrations
                 values: new object[,]
                 {
                     { 1, "This Is Shoes", "Shoes" },
-                    { 2, "This Is Sandal", "Sandal" }
+                    { 2, "This Is Sandal", "Sandal" },
+                    { 3, "This Is high heels", "high heels" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreateDate", "Description", "Name", "Price", "Rating", "ThumbPath" },
-                values: new object[] { 1, 1, new DateTime(2023, 9, 13, 22, 24, 23, 831, DateTimeKind.Local).AddTicks(481), "This is Jordan1", "Jordan1", 100000m, 5, "asd" });
+                values: new object[] { 1, 1, new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(366), "This is Jordan1", "Jordan1", 100000m, 5, "asd" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreateDate", "Description", "Name", "Price", "Rating", "ThumbPath" },
-                values: new object[] { 2, 2, new DateTime(2023, 9, 13, 22, 24, 23, 831, DateTimeKind.Local).AddTicks(500), "This is Jordan 2", "Jordan 2", 20000m, 10, "asd" });
+                values: new object[] { 2, 2, new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(379), "This is Jordan 2", "Jordan 2", 20000m, 10, "asd" });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreateDate", "Description", "Name", "Price", "Rating", "ThumbPath" },
+                values: new object[] { 3, 3, new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(380), "This is Jordan 3", "Jordan 3", 30000m, 20, "asd" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Carts_ProductId",

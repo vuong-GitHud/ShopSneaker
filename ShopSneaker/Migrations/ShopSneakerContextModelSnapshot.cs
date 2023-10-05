@@ -154,7 +154,7 @@ namespace ShopSneaker.Migrations
                         new
                         {
                             Id = new Guid("7225da6b-65fc-4b04-8f46-fd3176512eff"),
-                            ConcurrencyStamp = "46bacf9a-5a8c-424a-bc51-0e8414b7d889",
+                            ConcurrencyStamp = "19307867-5641-4390-96f0-776c6790184b",
                             Description = "Admin Role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -226,7 +226,7 @@ namespace ShopSneaker.Migrations
                         {
                             Id = new Guid("d60a3a17-4053-42bb-a858-f44e7825bdf4"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ca8a3006-e6be-44cc-97c2-90a35c266b28",
+                            ConcurrencyStamp = "318bdeb9-ec05-47d7-93d0-c9a5270837f3",
                             DOB = new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin.vuong@gmail.com",
                             EmailConfirmed = true,
@@ -234,7 +234,7 @@ namespace ShopSneaker.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin.vuong@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDXjWKJReDikcnV4ae+vHRLm1Bh1J/VdYKkzUDl1156ZA+jjxPRM71P0vBWSq9jS3w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB5Cuka7tDzqqzIYdauEsurj4rgxjsfsY45Uf3QC8dqcNJn/LyThACeAELUEtATSsA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -304,6 +304,12 @@ namespace ShopSneaker.Migrations
                             Id = 2,
                             Description = "This Is Sandal",
                             Name = "Sandal"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "This Is high heels",
+                            Name = "high heels"
                         });
                 });
 
@@ -451,7 +457,7 @@ namespace ShopSneaker.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreateDate = new DateTime(2023, 9, 13, 22, 24, 23, 831, DateTimeKind.Local).AddTicks(481),
+                            CreateDate = new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(366),
                             Description = "This is Jordan1",
                             Name = "Jordan1",
                             Price = 100000m,
@@ -462,11 +468,22 @@ namespace ShopSneaker.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreateDate = new DateTime(2023, 9, 13, 22, 24, 23, 831, DateTimeKind.Local).AddTicks(500),
+                            CreateDate = new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(379),
                             Description = "This is Jordan 2",
                             Name = "Jordan 2",
                             Price = 20000m,
                             Rating = 10,
+                            ThumbPath = "asd"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 3,
+                            CreateDate = new DateTime(2023, 10, 6, 0, 31, 1, 185, DateTimeKind.Local).AddTicks(380),
+                            Description = "This is Jordan 3",
+                            Name = "Jordan 3",
+                            Price = 30000m,
+                            Rating = 20,
                             ThumbPath = "asd"
                         });
                 });
