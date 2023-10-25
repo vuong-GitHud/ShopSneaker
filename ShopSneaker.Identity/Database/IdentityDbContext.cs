@@ -16,7 +16,7 @@ namespace ShopSneaker.Identity.Database
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-DHG9R36;Database=Identity;Trusted_Connection=True;Encrypt=false;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("server=34.142.156.6;user id=vuongpham;password=123456;database=IdentityDb;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
