@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 using ShopSneaker.AdminMVC.Infrastructure;
+using ShopSneaker.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddDbContext<ShopSneakerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ShopSneakerContextConnection")));
 // Add services to the container.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
