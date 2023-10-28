@@ -1,0 +1,50 @@
+﻿@using ShopSneaker.Models;
+@model CategoryVm
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head-content">
+                    <h3 class="nk-block-title page-title">Create Category</h3>
+                </div>
+                <form asp-action="Create" asp-controller="Product" enctype="multipart/form-data" method="post">
+                    <div class="nk-block">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="product-title">Product Title</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="product-title" asp-for="Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-mb-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="regular-price">Description</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="regular-price" asp-for="Description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-mb-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="sale-price">Id</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="sale-price" asp-for="Id">
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">
+                                    <em class="icon ni ni-plus"></em><span>Add Category</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
