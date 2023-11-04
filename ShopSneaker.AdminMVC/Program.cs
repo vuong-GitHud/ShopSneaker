@@ -5,7 +5,8 @@ using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Infacture;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddDbContext<ShopSneakerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ShopSneakerContextConnection")));
 // Add services to the container.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
