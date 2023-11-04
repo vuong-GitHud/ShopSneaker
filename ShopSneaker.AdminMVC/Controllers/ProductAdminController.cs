@@ -7,6 +7,7 @@ using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Data.Entities;
 using ShopSneaker.Models;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using ProductVm = ShopSneaker.Models.ProductVm;
 
 namespace ShopSneaker.AdminMVC.Controllers
 {
@@ -33,7 +34,7 @@ namespace ShopSneaker.AdminMVC.Controllers
                         from c in pc.DefaultIfEmpty()
                         select new { p, pc, c };
             query = query.OrderByDescending(c => c.p.Id);
-            var data = await query.Select(x => new Model.Product.ProductVm()
+            var data = await query.Select(x => new ProductVm()
             {
                 Id = x.p.Id,
                 Name = x.p.Name,

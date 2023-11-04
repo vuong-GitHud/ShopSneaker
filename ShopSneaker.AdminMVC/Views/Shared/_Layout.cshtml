@@ -40,7 +40,7 @@
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/index.html" class="nk-menu-link">
+                                    <a href="@Url.Action("Index","Dashboard")" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
                                     </a>
@@ -52,7 +52,7 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/products.html" class="nk-menu-link">
+                                    <a href="@Url.Action("Index","ProductAdmin")" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-package-fill"></em></span>
                                         <span class="nk-menu-text">Products</span>
                                     </a>
@@ -404,7 +404,7 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a href="@Url.Action("Logout","Authen")"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>

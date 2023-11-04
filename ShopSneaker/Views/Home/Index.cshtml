@@ -1,6 +1,15 @@
-﻿@model List<ProductVm>
+﻿@using System.Security.Claims
+@model List<ProductVm>
 @{
     ViewData["Title"] = "Home Page";
+}
+@{
+    var userId = string.Empty;
+    if (User.Identity.IsAuthenticated)
+    {
+        var user = User.FindFirst(ClaimTypes.NameIdentifier);
+        userId = user.Value.ToString();
+    };
 }
 
 <div class="header-video">
@@ -144,7 +153,7 @@
                         <ul>
                             <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
                             <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
+                            <li><a data-id="@item.Id" onclick="addToCart(@item.Id)" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
                         </ul>
                     </div>
                     <!-- /grid_item -->
@@ -203,3 +212,20 @@
     </div><!-- /container -->
 </div>
 <!-- /bg_gray -->
+<script type="text/javascript">
+    debugger
+    function addToCart(id) {
+        $.ajax({
+            url: "/Cart/AddToCart",
+            type: "POST",
+            data: {
+                productId : id,
+                customerId : '@userId',
+                quantity : 1
+            },
+            success: function (result) {
+                window.location.reload();
+            }
+        })
+    }
+</script>

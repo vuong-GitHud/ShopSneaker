@@ -27,7 +27,7 @@ namespace ShopSneaker.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(AuthenVm request)
         {
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
             {
                 var results = await _authenApi.Authenticate(request);
                 if (results.AccessToken != null)
@@ -35,6 +35,8 @@ namespace ShopSneaker.Controllers
                     var claims = new List<Claim>()
                     {
                         new Claim(ClaimTypes.Name, results.Email),
+                        new Claim(ClaimTypes.Email, results.Email),
+                        new Claim(ClaimTypes.Surname, results.Name),
                         new Claim(ClaimTypes.Rsa, results.AccessToken),
                         new Claim(ClaimTypes.NameIdentifier, results.UserId),
                         new Claim(ClaimTypes.Role, results.UserRole)
@@ -56,7 +58,7 @@ namespace ShopSneaker.Controllers
 
                     //if (!string.IsNullOrWhiteSpace(returnUrl))
                     //    return Redirect(returnUrl);
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -65,6 +67,48 @@ namespace ShopSneaker.Controllers
                 }
             }
             return View("Login", request);
+        }
+        
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var model = new RegisterModel();
+            return View(model);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            var result = await _authenApi.CheckEmailExist(model.Email);
+            
+            if (result)
+            {
+                ViewBag.Message = "Email already exists";
+                return View("Register");
+            }
+
+            if (model.PasswordConfirm.Equals(model.Password))
+            {
+                ViewBag.Message = "Password and ConfirmPass are not same";
+                return View("Register");
+            }
+            
+            var registerResults = await _authenApi.Register(model);
+            
+            if (registerResults.IsSuccess == false)
+            {
+                ViewBag.Message = "Please input field again";
+                return View("Register");
+            }
+            
+            ViewBag.Message = "Register Successed!!!";
+            return View("Login");
+        }
+        
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

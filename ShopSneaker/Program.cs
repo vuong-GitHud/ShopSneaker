@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using ShopSneaker.Infacture;
 using ShopSneaker.Infacture.Emplement;
 using ShopSneaker.Infacture.interfaces;
+using ShopSneaker.Infacture.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ShopSneakerContextConnection") ?? throw new InvalidOperationException("Connection string 'ShopSneakerContextConnection' not found.");
@@ -42,7 +43,9 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IAuthenApi, AuthenApi>();
+// builder.Services.AddTransient<IAuthenApi, AuthenApi>();
+builder.Services.AddHttpClient<IAuthenApi, AuthenApi>();
+builder.Services.AddScoped<ICartService, CartService>();
 
 var app = builder.Build();
 

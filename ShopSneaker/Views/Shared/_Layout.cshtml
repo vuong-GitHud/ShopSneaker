@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+@{
+    var userId = string.Empty;
+    if (User.Identity.IsAuthenticated)
+    {
+        var user = User.FindFirst(ClaimTypes.NameIdentifier);
+        userId = user.Value.ToString();
+    };
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -252,7 +261,7 @@
 							<ul class="top_tools">
 								<li>
 									<div class="dropdown dropdown-cart">
-										<a href="cart.html" class="cart_bt"><strong>2</strong></a>
+										<a href="@Url.Action("Index", "Cart", new {userId = userId})" class="cart_bt"><strong id="cart-count">0</strong></a>
 										<div class="dropdown-menu">
 											<ul>
 												<li>
@@ -283,7 +292,14 @@
 								</li>
 								<li>
 									<div class="dropdown dropdown-access">
-										<a href="account.html" class="access_link"><span>Account</span></a>
+										@if (User.Identity.IsAuthenticated)
+										{
+											<a href="@Url.Action("Logout","AuthenCustomer")">@User.Identity.Name</a>
+										}
+										else
+										{
+											<a href="@Url.Action("Login", "AuthenCustomer")" class="access_link"><span>Account</span></a>
+										}
 										<div class="dropdown-menu">
 											<a href="account.html" class="btn_1">Sign In or Sign Up</a>
 											<ul>
@@ -439,11 +455,12 @@
 
 	<div id="toTop"></div><!-- Back to top button -->
 	<!-- COMMON SCRIPTS -->
-	<script src="./js/common_scripts.min.js"></script>
-	<script src="~/js/main.js</script>
+<script src="./js/common_scripts.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="~/js/main.js"></script>
 
 	<!-- SPECIFIC SCRIPTS -->
-	<script src="~/js/modernizr.js"></script>
+	<script src="js/modernizr.js"></script>
 	<script src="~/js/video_header.min.js"></script>
 	<script>
 		// Video Header
@@ -455,7 +472,7 @@
 		});
 	</script>
 	<script src="./js/isotope.min.js"></script>
-	<script>
+<script>
 		// Isotope filter
 		$(window).on('load', function () {
 			var $container = $('.isotope-wrapper');
@@ -466,6 +483,22 @@
 			$('.isotope-wrapper').isotope({ filter: selector });
 		});
 	</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.ajax({
+			url : '/Cart/GetTotalCart/',
+			type: 'GET',
+			dataType: 'json',
+			data: {
+				userId : '@userId'
+			},
+			success: function(data) {
+			  $("#cart-count").text(data);
+			}
+		});
+	})
+</script>
 
 </body>
 </html>

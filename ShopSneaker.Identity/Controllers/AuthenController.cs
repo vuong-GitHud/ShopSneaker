@@ -15,7 +15,7 @@ namespace ShopSneaker.Identity.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(LoginRequest model)
         {
             var result = await _userService.LoginByEmail(model.Email, model.Password);
@@ -27,5 +27,14 @@ namespace ShopSneaker.Identity.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterRequest model)
+        {
+            model.RoleId = 2;
+            var result = await _userService.Register(model);
+            return Ok(result);
+        }
+        
     }
 }
