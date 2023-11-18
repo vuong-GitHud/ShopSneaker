@@ -53,10 +53,10 @@
                                             </div>
                                         </li>
                                         <li class="nk-block-tools-opt">
-                                            <a href="/product/create" class="toggle btn btn-icon btn-primary d-md-none">
+                                            <a href="/ProductAdmin/create" class="toggle btn btn-icon btn-primary d-md-none">
                                                 <em class="icon ni ni-plus"></em>
                                             </a>
-                                            <a href="/product/create" class="btn btn-primary d-md-inline-flex">
+                                            <a href="/ProductAdmin/create" class="btn btn-primary d-md-inline-flex">
                                                 <em class="icon ni ni-plus"></em><span>Add Product</span>
                                             </a>
                                         </li>
@@ -179,7 +179,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="@Url.Action("Detail", new {id = item.Id})">
                                                                 <em class="icon ni ni-eye"></em><span>View Product</span>
                                                             </a>
                                                         </li>

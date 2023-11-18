@@ -58,7 +58,7 @@ namespace ShopSneaker.AdminMVC.Controllers
 
         [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Create(Model.Product.ProductVm model)
+        public async Task<IActionResult> Create(ProductVm model)
         {
             if (model.Files != null)
             {
@@ -72,9 +72,21 @@ namespace ShopSneaker.AdminMVC.Controllers
             }
             model.CreateDate = DateTime.Now;
             model.Rating = 5;
-            _context.Products.Add(_mapper.Map<Product>(model));
+            await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
+        }
+        // GET: ProductController/Details/5
+        public ActionResult Detail(int id)
+        {
+            //var query = from p in _context.Products
+            //            join c in _context.Categories on p.CategoryId equals c.Id into pc
+            //            from c in pc.DefaultIfEmpty()
+            //            where p.Id == id
+            //            select new { p, pc, c };
+            //var result = query.FirstOrDefault();
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            return View(product);
         }
 
         [HttpGet]
