@@ -5,6 +5,7 @@ using ShopSneaker.Models;
 using System.Diagnostics;
 using AutoMapper;
 using ShopSneaker.Areas.Identity.Data;
+using ShopSneaker.Data.Entities;
 
 namespace ShopSneaker.Controllers
 {
@@ -26,7 +27,29 @@ namespace ShopSneaker.Controllers
             List<ProductVm> productVms = _mapper.Map<List<ProductVm>>(products);
             return View(productVms);
         }
-        
+        public async Task<IActionResult> Detail(int id)
+        {
+            //var query = from p in _context.Products
+            //            join c in _context.Categories on p.CategoryId equals c.Id into pc
+            //            from c in pc.DefaultIfEmpty()
+            //            where p.Id == id
+            //            select new { p, pc, c };
+            //query = query.OrderByDescending(c => c.p.Id);
+            //var data = await query.Select(x => new ProductVm()
+            //{
+            //    Id = x.p.Id,
+            //    Name = x.p.Name,
+            //    Price = x.p.Price,
+            //    Description = x.p.Description,
+            //    CreateDate = x.p.CreateDate,
+            //    Rating = x.p.Rating,
+            //    Category = x.c.Name,
+            //    ThumbPath = x.p.ThumbPath
+            //}).ToListAsync();
+            //return View(data);
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            return View(product);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
