@@ -31,7 +31,7 @@ namespace ShopSneaker.Identity.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest model)
         {
-            model.RoleId = 2;
+            model.RoleId = 1;
             var result = await _userService.Register(model);
             return Ok(result);
         }

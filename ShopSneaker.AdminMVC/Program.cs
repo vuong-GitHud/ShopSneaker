@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using ShopSneaker.AdminMVC.Infrastructure;
+using ShopSneaker.AdminMVC.Infrastructure.Services;
 using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Infacture;
 
@@ -38,6 +39,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IAuthenAPI, AuthenAPI>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddDbContext<ShopSneakerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShopSneakerContextConnection")));
 builder.Services.AddAutoMapper(typeof(MapperConfig));

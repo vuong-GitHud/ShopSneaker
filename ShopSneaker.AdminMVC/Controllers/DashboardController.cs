@@ -1,16 +1,25 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShopSneaker.AdminMVC.Infrastructure.Services;
 
 namespace ShopSneaker.AdminMVC.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
-        // GET: DashboardController
-        public ActionResult Index()
+        private readonly IOrderService _orderService;
+
+        public DashboardController(IOrderService orderService)
         {
-            return View();
+            _orderService = orderService;
+        }
+
+        // GET: DashboardController
+        public async Task<IActionResult> Index()
+        {
+            var result = await _orderService.GetOrder();
+            return View(result);
         }
 
         // GET: DashboardController/Details/5

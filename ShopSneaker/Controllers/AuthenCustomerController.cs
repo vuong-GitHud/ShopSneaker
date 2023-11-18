@@ -87,7 +87,7 @@ namespace ShopSneaker.Controllers
                 return View("Register");
             }
 
-            if (model.PasswordConfirm.Equals(model.Password))
+            if (!model.PasswordConfirm.Equals(model.Password, StringComparison.OrdinalIgnoreCase))
             {
                 ViewBag.Message = "Password and ConfirmPass are not same";
                 return View("Register");

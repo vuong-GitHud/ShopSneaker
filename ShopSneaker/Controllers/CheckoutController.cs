@@ -101,31 +101,36 @@ public class CheckoutController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult> SuccessPayment([FromQuery] string vnp_TxnRef)
+    public async Task<ActionResult> SuccessPayment([FromQuery] string vnp_TxnRef, string vnp_ResponseCode)
     {
-        var orderId = Convert.ToInt32(vnp_TxnRef);
-        var order = await _context.Orders.FirstOrDefaultAsync(c => c.Id == orderId);
-        var carts = await _context.Carts.Where(c => c.UserId == order.UserId).ToListAsync();
-
-        order.isPayment = true;
-        await _context.SaveChangesAsync();
-
-        foreach (var item in carts)
+        if (vnp_ResponseCode.ToString() == "00")
         {
-            var orderDetail = new OrderDetail()
-            {
-                OrderId = order.Id,
-                ProductId = item.ProductId,
-                Price = item.Price,
-                Quantity = item.Quantity
-            };
-            _context.OrderDetails.Add(orderDetail);
+            var orderId = Convert.ToInt32(vnp_TxnRef);
+            var order = await _context.Orders.FirstOrDefaultAsync(c => c.Id == orderId);
+            var carts = await _context.Carts.Where(c => c.UserId == order.UserId).ToListAsync();
+
+            order.isPayment = true;
             await _context.SaveChangesAsync();
+
+            foreach (var item in carts)
+            {
+                var orderDetail = new OrderDetail()
+                {
+                    OrderId = order.Id,
+                    ProductId = item.ProductId,
+                    Price = item.Price,
+                    Quantity = item.Quantity
+                };
+                _context.OrderDetails.Add(orderDetail);
+                await _context.SaveChangesAsync();
+            }
+
+            _context.Carts.RemoveRange(carts);
+            await _context.SaveChangesAsync();
+
+            return View();
         }
 
-        _context.Carts.RemoveRange(carts);
-        await _context.SaveChangesAsync();
-        
-        return View();
+        return RedirectToAction("Index","Home");
     }
 }
