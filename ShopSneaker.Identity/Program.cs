@@ -26,6 +26,7 @@ builder.Services.AddIdentity<Users, Roles>()
 const string ALLOWED_USERNAME_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+/";
 builder.Services.AddAutoMapper(typeof(UserProfile));
 builder.Services.TryAddScoped<IUserService, UserService>();
+builder.Services.TryAddScoped<IAccountService, AccountService>();
 builder.Services.Configure<JwtTokenOption>(builder.Configuration.GetSection(JwtTokenOption.JwtTokenOptionImportConfig));
 builder.Services.AddStaticHelper();
 builder.Services.AddOptions();

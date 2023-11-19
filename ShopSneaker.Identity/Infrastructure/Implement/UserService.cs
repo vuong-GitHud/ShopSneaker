@@ -60,6 +60,56 @@ namespace ShopSneaker.Identity.Infrastructure.Implement
 
         }
 
+        public async Task<RegisterViewModel> Register(RegisterRequest? model)
+        {
+            var user = new Users(model.Email, model.FirstName ?? string.Empty, model.LastName ?? string.Empty,
+                model.FullName ?? string.Empty)
+            {
+                Email = model.Email,
+                FullName = model.FullName,
+                CreatedDate = DateTime.Now,
+            };
+
+            var createResult = await _userManager.CreateAsync(user, model.Password);
+
+            if (createResult.Succeeded)
+            {
+                var roleId = model.RoleId;
+                if (roleId > 0)
+                {
+                    var findUser = _userManager.FindByEmailAsync(user.Email);
+                    var role = _context.Roles.AsNoTracking().FirstOrDefault(k => k.Id == roleId) ?? new Roles();
+                    var roles = new List<Roles>()
+                    {
+                        role
+                    };
+                    var userRole = new List<UserRoles>();
+                    foreach (var r in roles)
+                    {
+                        userRole.Add(new UserRoles()
+                        {
+                            UserId = user.Id,
+                            RoleId = r.Id
+                        });
+                    }
+                    _context.UserRoles.AddRange(userRole);
+                    _context.SaveChanges();
+                }
+
+                return new RegisterViewModel()
+                {
+                    ConfirmEmailToken = await _userManager.GenerateEmailConfirmationTokenAsync(user),
+                    IsSuccess = true,
+                    UserId = user.UserId.ToString()
+                };
+            }
+
+            return new RegisterViewModel()
+            {
+                IsSuccess = false
+            };
+        }
+
         private bool UpdateUser (Users users)
         {
             if (users == null)

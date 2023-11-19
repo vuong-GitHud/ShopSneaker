@@ -13,7 +13,7 @@ namespace ShopSneaker.AdminMVC.Infrastructure
         }
         public async Task<AuthenViewModel> Authenticate(AuthenModel request)
         {
-            string url = "https://localhost:44317/api/authen";
+            string url = "https://localhost:7105/api/authen/login";
 
             var req = new BaseRequest<object>(new
             {

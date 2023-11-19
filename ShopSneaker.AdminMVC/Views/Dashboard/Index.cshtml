@@ -1,5 +1,279 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ShopSneaker.AdminMVC.Model.Dashboard.OrderViewModel
+
 @{
 }
+
+
+<div class="nk-content ">
+<div class="container-fluid">
+<div class="nk-content-inner">
+<div class="nk-content-body">
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h3 class="nk-block-title page-title">Dashboard</h3>
+        </div><!-- .nk-block-head-content -->
+    </div><!-- .nk-block-between -->
+</div><!-- .nk-block-head -->
+<div class="nk-block">
+<div class="row g-gs">
+<div class="col-xxl-3 col-sm-6">
+    <div class="card">
+        <div class="nk-ecwg nk-ecwg6">
+            <div class="card-inner">
+                <div class="card-title-group">
+                    <div class="card-title">
+                        <h6 class="title">Total Orders Monthly</h6>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="data-group">
+                        <div class="amount">@Model.TotalOrderMonth</div>
+                        <div class="nk-ecwg6-ck">
+                            <canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span>
+                    </div>
+                </div>
+            </div><!-- .card-inner -->
+        </div><!-- .nk-ecwg -->
+    </div><!-- .card -->
+</div><!-- .col -->
+<div class="col-xxl-3 col-sm-6">
+    <div class="card">
+        <div class="nk-ecwg nk-ecwg6">
+            <div class="card-inner">
+                <div class="card-title-group">
+                    <div class="card-title">
+                        <h6 class="title">Revenue Monthly</h6>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="data-group">
+                        <div class="amount">$@Model.TotalRevenue</div>
+                        <div class="nk-ecwg6-ck">
+                            <canvas class="ecommerce-line-chart-s3" id="todayRevenue"></canvas>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs. last week</span>
+                    </div>
+                </div>
+            </div><!-- .card-inner -->
+        </div><!-- .nk-ecwg -->
+    </div><!-- .card -->
+</div><!-- .col -->
+<div class="col-xxl-3 col-sm-6">
+    <div class="card">
+        <div class="nk-ecwg nk-ecwg6">
+            <div class="card-inner">
+                <div class="card-title-group">
+                    <div class="card-title">
+                        <h6 class="title">Today Customers</h6>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="data-group">
+                        <div class="amount">847</div>
+                        <div class="nk-ecwg6-ck">
+                            <canvas class="ecommerce-line-chart-s3" id="todayCustomers"></canvas>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span>
+                    </div>
+                </div>
+            </div><!-- .card-inner -->
+        </div><!-- .nk-ecwg -->
+    </div><!-- .card -->
+</div><!-- .col -->
+<div class="col-xxl-6">
+    <div class="card card-full">
+        <div class="nk-ecwg nk-ecwg8 h-100">
+            <div class="card-inner">
+                <div class="card-title-group mb-3">
+                    <div class="card-title">
+                        <h6 class="title">Sales Statistics</h6>
+                    </div>
+                </div>
+                <div class="nk-ecwg8-ck">
+                    <div id="chart1" class="apex-charts" dir="ltr"></div>
+                </div>
+            </div><!-- .card-inner -->
+        </div>
+    </div><!-- .card -->
+</div><!-- .col -->
+<div class="col-xxl-3 col-md-6">
+    <div class="card card-full overflow-hidden">
+        <div class="nk-ecwg nk-ecwg7 h-100">
+            <div class="card-inner flex-grow-1">
+                <div class="card-title-group mb-4">
+                    <div class="card-title">
+                        <h6 class="title">Order Statistics</h6>
+                    </div>
+                </div>
+                    <div id="chartDo" class="apex-charts"></div>
+            </div><!-- .card-inner -->
+        </div>
+    </div><!-- .card -->
+</div><!-- .col -->
+<div class="col-xxl-8">
+    <div class="card card-full">
+        <div class="card-inner">
+            <div class="card-title-group">
+                <div class="card-title">
+                    <h6 class="title">Recent Orders</h6>
+                </div>
+            </div>
+        </div>
+        <div class="nk-tb-list mt-n2">
+            <div class="nk-tb-item nk-tb-head">
+                <div class="nk-tb-col">
+                    <span>Order No.</span>
+                </div>
+                <div class="nk-tb-col tb-col-sm">
+                    <span>Customer</span>
+                </div>
+                <div class="nk-tb-col tb-col-md">
+                    <span>Date</span>
+                </div>
+                <div class="nk-tb-col">
+                    <span>Amount</span>
+                </div>
+                <div class="nk-tb-col">
+                    <span class="d-none d-sm-inline">Status</span>
+                </div>
+            </div>
+            @foreach (var item in Model.Orders)
+            {
+                <div class="nk-tb-item">
+                    <div class="nk-tb-col">
+                        <span class="tb-lead">
+                            <a href="#">#@item.Id</a>
+                        </span>
+                    </div>
+                    <div class="nk-tb-col tb-col-sm">
+                        <div class="user-card">
+                            <div class="user-avatar sm bg-purple-dim">
+                                <span>AB</span>
+                            </div>
+                            <div class="user-name">
+                                <span class="tb-lead">@item.Email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nk-tb-col tb-col-md">
+                        <span class="tb-sub">@item.OrderDate</span>
+                    </div>
+                    <div class="nk-tb-col">
+                        <span class="tb-sub tb-amount">@item.Amount <span>USD</span></span>
+                    </div>
+                    <div class="nk-tb-col">
+                        @if (item.isPayment)
+                        {
+                            <span class="badge badge-dot badge-dot-xs bg-success">Paid</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-dot badge-dot-xs bg-danger">Cancelled</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div><!-- .card -->
+</div>
+</div><!-- .col -->
+</div><!-- .row -->
+</div><!-- .nk-block -->
+</div>
+</div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/apexcharts/apexcharts.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: 'Dashboard/Chart',
+            dataType: 'json',
+            success: function (result) {
+                var option = {
+                    series: [{
+                        name: 'Revenue',
+                        data: result.revenueMonthlies
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'line',
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'straight',
+                        dashArray: [0, 0, 15, 5, 0]
+                    },
+                    xaxis: {
+                        categories: result.revenueMonthlies.x,
+                        title: {
+                            text: 'Month'
+                        }
+                    },
+                    yaxis: {
+                        title: {
+                            text: 'Amount (USD)'
+                        }
+                    },
+                    grid: {
+                        row: {
+                            colors: ['#f3f3f3', 'transparent'],
+                            opacity: 0.5
+                        },
+                    },
+                    colors: ["#5664d2", "#1cbb8c"],
+                };
+                chart = new ApexCharts(document.querySelector("#chart1"), option);
+                chart.render();
+            }
+        });
+        
+        $.ajax({
+            url: 'Dashboard/Chart',
+            dataType: 'json',
+            success: function (result) {
+                var categories = [];
+                var percents = [];
+
+                for (var i = 0; i < result.percentProducts.length; i++) {
+                    categories.push(result.percentProducts[i].category);
+                    percents.push(result.percentProducts[i].percent);
+                }
+
+                var donutOptions = {
+                    series: percents,
+                    chart: {
+                        type: "donut" 
+                    },
+                    labels: categories,
+                    plotOptions: {
+                        pie: {
+                            donut: {
+                                labels: {
+                                    show: true,
+                                    name: "Total",
+                                    value: result.totalProduct
+                                }
+                            }
+                        }
+                    },
+                    colors: ["#5664d2", "#1cbb8c"],
+                };
+                var chartDo = new ApexCharts(document.querySelector("#chartDo"), donutOptions);
+                chartDo.render();
+            }
+        });
+    });
+</script>

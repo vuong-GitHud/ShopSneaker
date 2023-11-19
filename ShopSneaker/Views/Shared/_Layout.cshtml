@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+@{
+    var userId = string.Empty;
+    if (User.Identity.IsAuthenticated)
+    {
+        var user = User.FindFirst(ClaimTypes.NameIdentifier);
+        userId = user.Value.ToString();
+    };
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,10 +35,12 @@
 	<link href="~/css/style.css" rel="stylesheet">
 
 	<!-- SPECIFIC CSS -->
-	<link href="~/css/home_1.css" rel="stylesheet">
+	<link href="css/home_1.css" rel="stylesheet">
 
 	<!-- YOUR CUSTOM CSS -->
 	<link href="~/css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/dashlite.css">
+	<link id="skin-default" rel="stylesheet" href="/css/theme.css">
 
 </head>
 
@@ -44,7 +55,7 @@
 					<div class="row small-gutters">
 						<div class="col-xl-3 col-lg-3 d-lg-flex align-items-center">
 							<div id="logo">
-								<a href="index.html"><img src="img/logo.svg" alt="" width="100" height="35"></a>
+								<a href="/"><img src="img/logo.jpg" alt="" width="100" height="35"></a>
 							</div>
 						</div>
 						<nav class="col-xl-6 col-lg-7">
@@ -141,7 +152,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="blog.html">Blog</a>
+										<a href="@Url.Action("Login","AuthenCustomer")">Blog</a>
 									</li>
 									<li>
 										<a href="#0">Buy Template</a>
@@ -250,29 +261,7 @@
 							<ul class="top_tools">
 								<li>
 									<div class="dropdown dropdown-cart">
-										<a href="cart.html" class="cart_bt"><strong>2</strong></a>
-										<div class="dropdown-menu">
-											<ul>
-												<li>
-													<a href="product-detail-1.html">
-														<figure><img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class="lazy"></figure>
-														<strong><span>1x Armor Air x Fear</span>$90.00</strong>
-													</a>
-													<a href="#0" class="action"><i class="ti-trash"></i></a>
-												</li>
-												<li>
-													<a href="product-detail-1.html">
-														<figure><img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/thumb/2.jpg" alt="" width="50" height="50" class="lazy"></figure>
-														<strong><span>1x Armor Okwahn II</span>$110.00</strong>
-													</a>
-													<a href="0" class="action"><i class="ti-trash"></i></a>
-												</li>
-											</ul>
-											<div class="total_drop">
-												<div class="clearfix"><strong>Total</strong><span>$200.00</span></div>
-												<a href="cart.html" class="btn_1 outline">View Cart</a><a href="checkout.html" class="btn_1">Checkout</a>
-											</div>
-										</div>
+										<a href="@Url.Action("Index", "Cart", new {userId = userId})" class="cart_bt"><strong id="cart-count">0</strong></a>
 									</div>
 									<!-- /dropdown-cart-->
 								</li>
@@ -281,15 +270,19 @@
 								</li>
 								<li>
 									<div class="dropdown dropdown-access">
-										<a href="account.html" class="access_link"><span>Account</span></a>
+										<a class="access_link"><span>Account</span></a>
 										<div class="dropdown-menu">
-											<a href="account.html" class="btn_1">Sign In or Sign Up</a>
+											@if (User.Identity.IsAuthenticated)
+											{
+												<a href="@Url.Action("Logout", "AuthenCustomer")" class="btn_1">@User.Identity.Name (Logout)</a>
+											}
+											else
+											{
+												<a href="@Url.Action("Login","AuthenCustomer")" class="btn_1">Sign In or Sign Up</a>
+											}
 											<ul>
 												<li>
-													<a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
-												</li>
-												<li>
-													<a href="account.html"><i class="ti-package"></i>My Orders</a>
+													<a href="@Url.Action("Index","Orders")"><i class="ti-package"></i>My Orders</a>
 												</li>
 												<li>
 													<a href="account.html"><i class="ti-user"></i>My Profile</a>
@@ -437,11 +430,13 @@
 
 	<div id="toTop"></div><!-- Back to top button -->
 	<!-- COMMON SCRIPTS -->
-	<script src="./js/common_scripts.min.js"></script>
-	<script src="~/js/main.js</script>
+<script src="./js/common_scripts.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="~/js/main.js"></script>
+<script src="js/carousel-home.min.js"></script>
 
 	<!-- SPECIFIC SCRIPTS -->
-	<script src="~/js/modernizr.js"></script>
+	<script src="js/modernizr.js"></script>
 	<script src="~/js/video_header.min.js"></script>
 	<script>
 		// Video Header
@@ -453,7 +448,7 @@
 		});
 	</script>
 	<script src="./js/isotope.min.js"></script>
-	<script>
+<script>
 		// Isotope filter
 		$(window).on('load', function () {
 			var $container = $('.isotope-wrapper');
@@ -464,6 +459,26 @@
 			$('.isotope-wrapper').isotope({ filter: selector });
 		});
 	</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.ajax({
+			url : '/Cart/GetTotalCart/',
+			type: 'GET',
+			dataType: 'json',
+			data: {
+				userId : '@userId'
+			},
+			success: function(data) {
+			  $("#cart-count").text(data);
+			}
+		});
+		
+		$(".access_link").on("click", function (){
+			$('.dropdown-menu').slideToggle();
+		});
+	})
+</script>
 
 </body>
 </html>
