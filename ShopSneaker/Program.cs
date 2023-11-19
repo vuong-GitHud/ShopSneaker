@@ -4,6 +4,7 @@ using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using ShopSneaker.Infacture;
 using ShopSneaker.Infacture.Emplement;
 using ShopSneaker.Infacture.interfaces;
@@ -46,6 +47,9 @@ builder.Services.AddControllersWithViews();
 // builder.Services.AddTransient<IAuthenApi, AuthenApi>();
 builder.Services.AddHttpClient<IAuthenApi, AuthenApi>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

@@ -1,0 +1,74 @@
+@model OrderDetailViewModel
+
+
+<head>
+    <link href="css/checkout.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+
+<div class="container margin_30">
+<!-- /page_header -->
+<div class="row">
+<div class="col-lg-4 col-md-6">
+	<div class="step first">
+		<h3>1. User Info and Billing address</h3>
+		<ul class="nav nav-tabs" id="tab_checkout" role="tablist">
+		</ul>
+			<div class="tab-content checkout">
+			<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
+				<div class="form-group">
+					<span>Email: @Model.Email</span>
+				</div>
+				<div class="form-group">
+					<span>Fullname: @Model.Fullname</span>
+				</div>
+				<hr>
+				<div class="form-group">
+					<span>Address: @Model.PhoneNumber</span>
+				</div>
+				<div class="form-group">
+					<span>Phone: @Model.Address</span>
+				</div>
+				<div class="row no-gutters">
+					<div class="col-4 form-group pr-1">
+						<span>@Model.City</span>
+					</div>
+					<div class="col-4 form-group pl-1">
+						<span>@Model.District</span>
+					</div>
+					<div class="col-4 form-group pl-1">
+						<span>@Model.Ward</span>
+					</div>
+				</div>
+				<!-- /row -->
+				<a href="@Url.Action("CancleOrder","Orders", new {id = Model.Id})" class="btn_1 full-width">Cancle Order</a>
+				<hr>
+			</div>
+			<!-- /tab_1 -->
+		</div>
+	</div>
+	<!-- /step -->
+</div>
+<div class="col-lg-4 col-md-6">
+	<div class="step last">
+		<h3>2. Order Summary</h3>
+		<div class="box_general summary">
+			@foreach (var product in Model.Products)
+			{
+				<ul>
+					<li class="clearfix">
+						<em>x(@Model.Quantity) @product.Name</em> <span>$@product.Price</span>
+					</li>
+				</ul>
+			}
+			<div class="total clearfix">TOTAL <span>$@Model.Amount</span></div>
+		</div>
+		<!-- /box_general -->
+	</div>
+	<!-- /step -->
+</div>
+</div>
+<!-- /row -->
+</div>
+<!-- /box_cart -->

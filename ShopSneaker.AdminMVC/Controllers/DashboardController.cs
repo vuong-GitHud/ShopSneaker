@@ -14,18 +14,17 @@ namespace ShopSneaker.AdminMVC.Controllers
         {
             _orderService = orderService;
         }
-
-        // GET: DashboardController
+        
         public async Task<IActionResult> Index()
         {
             var result = await _orderService.GetOrder();
             return View(result);
         }
-
-        // GET: DashboardController/Details/5
-        public ActionResult Details(int id)
+        
+        public async Task<JsonResult> Chart()
         {
-            return View();
+            var result =  await _orderService.GetDashBoard();
+            return Json(result);
         }
 
         // GET: DashboardController/Create

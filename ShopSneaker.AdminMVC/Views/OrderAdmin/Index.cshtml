@@ -1,0 +1,99 @@
+@model List<ShopSneaker.Data.Entities.Order>
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Orders</h3>
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <div class="nk-block">
+                    <div class="nk-tb-list is-separate is-medium mb-3">
+                        <div class="nk-tb-item nk-tb-head">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="oid">
+                                    <label class="custom-control-label" for="oid"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col"><span>Order</span></div>
+                            <div class="nk-tb-col tb-col-md"><span>Date</span></div>
+                            <div class="nk-tb-col"><span class="d-none d-sm-block">Payment</span></div>
+                            <div class="nk-tb-col tb-col-sm"><span>Status</span></div>
+                            <div class="nk-tb-col tb-col-md"><span>Customer</span></div>
+                            <div class="nk-tb-col"><span>Total</span></div>
+                        </div><!-- .nk-tb-item -->
+                        @foreach (var item in Model)
+                        {
+                            <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="oid01">
+                                    <label class="custom-control-label" for="oid01"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <span class="tb-lead"><a href="#">#@item.Id</a></span>
+                            </div>
+                                <div class="nk-tb-col tb-col-md">
+                                    <span class="tb-sub">@item.OrderDate</span>
+                                </div>
+                            <div class="nk-tb-col">
+                                @if (item.isPayment)
+                                {
+                                    <span class="dot bg-success d-sm-none"></span>
+                                    <span class="badge badge-sm badge-dot has-bg bg-success d-none d-sm-inline-flex">Paid</span>
+                                }
+                                else
+                                {
+                                    <span class="dot bg-warning d-sm-none"></span>
+                                    <span class="badge badge-sm badge-dot has-bg bg-warning d-none d-sm-inline-flex">Unpaid</span>
+                                }
+                            </div>
+                            <div class="nk-tb-col tb-col-sm">
+                                @if (!item.isCancle)
+                                {
+                                    <span class="dot bg-success d-sm-none"></span>
+                                    <span class="badge badge-sm badge-dot has-bg bg-success d-none d-sm-inline-flex">Shipping</span>
+                                }
+                                else
+                                {
+                                    <span class="dot bg-warning d-sm-none"></span>
+                                    <span class="badge badge-sm badge-dot has-bg bg-warning d-none d-sm-inline-flex">Cancled</span>
+                                }
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-sub text-primary">@item.FullName</span>
+                            </div>
+                            <div class="nk-tb-col">
+                                <span class="tb-lead">$ @item.Amount</span>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        }
+                    </div><!-- .nk-tb-list -->
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="nk-block-between-md g-3">
+                                <div class="g">
+                                    <ul class="pagination justify-content-center justify-content-md-start">
+                                        <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-right"></em></a></li>
+                                    </ul><!-- .pagination -->
+                                </div>
+                            </div><!-- .nk-block-between -->
+                        </div>
+                    </div>
+                </div><!-- .nk-block -->
+            </div>
+        </div>
+    </div>
+</div>

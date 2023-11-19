@@ -51,14 +51,16 @@ namespace ShopSneaker.AdminMVC.Controllers
 
         // GET: ProductController/Create
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var categories = await _context.Categories.ToListAsync();
+            ViewBag.Categories = categories;
             return View();
         }
 
         [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Create(Model.Product.ProductVm model)
+        public async Task<IActionResult> Create(ProductVm model)
         {
             if (model.Files != null)
             {
@@ -72,7 +74,7 @@ namespace ShopSneaker.AdminMVC.Controllers
             }
             model.CreateDate = DateTime.Now;
             model.Rating = 5;
-            _context.Products.Add(_mapper.Map<Product>(model));
+            await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
             return RedirectToAction("Create");
         }

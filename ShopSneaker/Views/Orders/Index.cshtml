@@ -1,0 +1,82 @@
+﻿@model List<ShopSneaker.Data.Entities.Order>
+
+<head>
+    <link href="css/cart.css" rel="stylesheet">
+</head>
+
+<div class="container margin_30">
+    <div class="page_header">
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Category</a>
+                </li>
+                <li>Page active</li>
+            </ul>
+        </div>
+        <h1>Cart page</h1>
+    </div>
+    <!-- /page_header -->
+    <table class="table table-striped cart-list">
+        <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Amout
+            </th>
+            <th>
+                isPayment
+            </th>
+            <th>
+                isCancle
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <span class="item_cart">@item.Id</span>
+                </td>
+                <td>
+                    <strong>@item.Amount</strong>
+                </td>
+                <td>
+                    @if (item.isPayment)
+                    {
+                        <strong class="text-bg-success">Paid</strong>
+                    }
+                    else
+                    {
+                        <strong class="text-bg-danger">UnPaid</strong>
+                    }
+                </td>
+                <td>
+                    @if (!item.isCancle)
+                    {
+                        <strong class="text-bg-primary">Shipping...</strong>
+                    }
+                    else
+                    {
+                        <strong class="text-bg-danger">Cancled</strong>
+                    }
+                </td>
+                <td class="options">
+                    <a href="@Url.Action("OrderDetail","Orders", new {id = item.Id})">
+                        <i class="ti-info"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

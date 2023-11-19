@@ -14,29 +14,106 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b63b1908-0f27-46af-b0c1-691aaff30bda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Controllers/BaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Controllers/LoginController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Infrastructure/IUserManagerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Infrastructure/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Infrastructure/UserManagerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Infrastructure/UserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Models/LoginVm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Login/Index.cshtml" afterDir="false" />
+    <list default="true" id="b63b1908-0f27-46af-b0c1-691aaff30bda" name="Changes" comment="Dashboard">
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Model/Dashboard/DashBoardViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/OrderAdmin/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/apexcharts.amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/apexcharts.common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/apexcharts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/apexcharts.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/apexcharts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/ca.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/cs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/de.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/el.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/es.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/fi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/fr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/he.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/hi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/hr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/hy.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/id.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/it.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/ka.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/ko.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/lt.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/nb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/nl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/pl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/pt-br.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/pt.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/rs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/ru.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/se.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/sk.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/sl.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/sq.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/th.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/tr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/ua.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/wwwroot/lib/apexcharts/locales/zh-cn.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker/Infacture/Services/IOrderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker/Infacture/Services/OrderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker/Models/OrderDetailViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker/Views/Orders/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShopSneaker/Views/Orders/OrderDetail.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ShopSneaker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ShopSneaker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Controllers/AuthenController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Controllers/ProductController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/ShopSneaker.Admin.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.Admin/ShopSneaker.Admin.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Authen/Login.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Product/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Product/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.Admin/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShopSneaker.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/DashboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/DashboardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/ProductAdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/ProductAdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Infrastructure/Services/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Infrastructure/Services/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Infrastructure/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Infrastructure/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/ShopSneaker.AdminMVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/ShopSneaker.AdminMVC.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/Dashboard/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/Dashboard/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/ProductAdmin/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/ProductAdmin/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/ProductAdmin/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/ProductAdmin/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/Infacture/MapperConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/Infacture/MapperConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/Views/Checkout/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/Views/Checkout/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/ResizeSensor.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/ResizeSensor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/ResizeSensor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/ResizeSensor.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel-home-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel-home-2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel-home.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel-home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel_with_thumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/carousel_with_thumbs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/common_scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/common_scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/common_scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/common_scripts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/footer-reveal.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/footer-reveal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/footer-reveal.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/footer-reveal.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery-3.6.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery-3.6.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.cookiebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.cookiebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.magnific-popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.magnific-popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.magnific-popup.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.magnific-popup.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.mmenu.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.mmenu.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.nice-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.nice-select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.nice-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/jquery.nice-select.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/lazyload.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/lazyload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/lazyload.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/lazyload.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/modernizr.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/modernizr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/owl.carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/owl.carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/owl.carousel.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/specific_listing.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/specific_listing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/theia-sticky-sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/theia-sticky-sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/video_header.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/video_header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/wow.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/wow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/wow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ShopSneaker/wwwroot/js/wow.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -46,18 +123,40 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vuong-GitHud&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bca5fb6f-6fe0-4b0b-bb0f-e4150f8e1df5" />
+        <option name="url" value="https://github.com/vuong-GitHud/ShopSneaker.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1275f295331158e7f742be33433a9637863b5f9e296946715d3e87961aef5a/Login.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1af51483c9bf18871cce649b9f966dd7be686536f998c33bba3c5fc4adea4a0/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1af51483c9bf18871cce649b9f966dd7be686536f998c33bba3c5fc4adea4a0/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/31e83f17d6234b15fd546584ec7f4cf0da142f8c44a1734fa8b1e9a780dcc41c/CookieAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/35208eeb88c2215736126878bd26771ad61a29f1e78b43b1269b5f6f5dc8c14/ClaimsIdentity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea95343b9387b73062a9b61b7538f826c54ce3529632b4472ba4494044d23/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3bc445d0d7a9fbf039126b29a985669d984a5ede912ccb520195ab41b6c53d2/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea95343b9387b73062a9b61b7538f826c54ce3529632b4472ba4494044d23/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/598be7b76329747735b1e8e8b423ca7a2fff54b0a9474b23f1e0f920a889444d/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5d938e1a52458be6d778788b5454cca6af63f3848625822d2877455acbcc3b/ClaimsPrincipal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/62cfcee8362d3c3b38869b3e9ef6582e30f07be87960d6e33bf444a89ac82f3/IHttpContextAccessor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1da7b6c7c71a954fe3eb2531c6476711b3e6d93a8d76795386d326bb9dbc/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf91eb35ab781c324ad4fa382dce85631ec37cf3813529f7c92208d866c851/TaskContinuation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a13a23687b565d3b3ca279dd8e2bfd1d74d49132851d9dcc489eaad1431ff/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1da7b6c7c71a954fe3eb2531c6476711b3e6d93a8d76795386d326bb9dbc/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf91eb35ab781c324ad4fa382dce85631ec37cf3813529f7c92208d866c851/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e329bd4f14a42c5f6951d92d29ba7796e511d77e6a35ab20a5a38f50ba6fd74/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7821e728ca685b97e8a1f8b28162c23268160f93444e3abc3b5dffdaf7b/PathString.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f369dce9ed9e871cca5c05b722a8e6218c58d21cceb16d61ae6853e818a34/HttpRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/faf4a4b37056302738a46865827c3d2d3b6b1b977603a3932b0cd749921118/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShopSneaker.Admin/Controllers/ProductController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShopSneaker.Admin/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShopSneaker.Admin/Views/Product/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -77,6 +176,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -92,7 +192,13 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.ShopSneaker.Admin">
+  <component name="RunManager" selected="Compound.Unnamed">
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <toRun name="ShopSneaker" type="LaunchSettings" />
+      <toRun name="ShopSneaker.AdminMVC" type="LaunchSettings" />
+      <toRun name="ShopSneaker.Identity" type="LaunchSettings" />
+      <method v="2" />
+    </configuration>
     <configuration name="ShopSneaker" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ShopSneaker/ShopSneaker.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -213,6 +319,17 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.Admin" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.Admin: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.AdminMVC" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.AdminMVC: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.Identity" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker.Identity: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.ShopSneaker: IIS Express" />
+      <item itemvalue="Compound.Unnamed" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -230,6 +347,12 @@
       <workItem from="1695643951166" duration="942000" />
       <workItem from="1695825739242" duration="5662000" />
       <workItem from="1696351715477" duration="60000" />
+      <workItem from="1698236660447" duration="5064000" />
+      <workItem from="1698501102127" duration="836000" />
+      <workItem from="1698505190420" duration="16252000" />
+      <workItem from="1699025467681" duration="18403000" />
+      <workItem from="1699449341238" duration="18623000" />
+      <workItem from="1700378913339" duration="6131000" />
     </task>
     <task id="LOCAL-00001" summary="view product in admin site">
       <option name="closed" value="true" />
@@ -239,7 +362,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694433055913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add Payment">
+      <option name="closed" value="true" />
+      <created>1699102488762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699102488762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dashboard">
+      <option name="closed" value="true" />
+      <created>1700300510752</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700300510752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,15 +399,114 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="view product in admin site" />
-    <option name="LAST_COMMIT_MESSAGE" value="view product in admin site" />
+    <MESSAGE value="add Payment" />
+    <MESSAGE value="Dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ShopSneaker/Views/Home/Index.cshtml</url>
-          <line>204</line>
-          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker\Views\Home\Index.cshtml" initialLine="382" isMultiMethodBreakpoint="true">
+          <url>file://$PROJECT_DIR$/ShopSneaker.Admin/Controllers/ProductsController.cs</url>
+          <line>21</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.Admin\Controllers\ProductsController.cs" initialLine="21" containingFunctionPresentation="Method 'Index'" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker/Controllers/AuthenCustomerController.cs</url>
+          <line>95</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker\Controllers\AuthenCustomerController.cs" initialLine="87" containingFunctionPresentation="Method 'Register'">
+            <startOffsets>
+              <option value="3322" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3377" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/AuthenController.cs</url>
+          <line>30</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.AdminMVC\Controllers\AuthenController.cs" initialLine="30" containingFunctionPresentation="Method 'Login'">
+            <startOffsets>
+              <option value="824" />
+            </startOffsets>
+            <endOffsets>
+              <option value="847" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/AuthenController.cs</url>
+          <line>76</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.AdminMVC\Controllers\AuthenController.cs" initialLine="76" containingFunctionPresentation="Method 'Logout'">
+            <startOffsets>
+              <option value="2681" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2714" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker/Controllers/CheckoutController.cs</url>
+          <line>104</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker\Controllers\CheckoutController.cs" initialLine="104" containingFunctionPresentation="Method 'SuccessPayment'">
+            <startOffsets>
+              <option value="3952" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3953" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.Identity/Controllers/AuthenController.cs</url>
+          <line>32</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.Identity\Controllers\AuthenController.cs" initialLine="32" containingFunctionPresentation="Method 'Register'">
+            <startOffsets>
+              <option value="923" />
+            </startOffsets>
+            <endOffsets>
+              <option value="924" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.AdminMVC/Infrastructure/Services/OrderService.cs</url>
+          <line>16</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.AdminMVC\Infrastructure\Services\OrderService.cs" initialLine="15" containingFunctionPresentation="Method 'GetOrder'">
+            <startOffsets>
+              <option value="419" />
+            </startOffsets>
+            <endOffsets>
+              <option value="420" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.AdminMVC/Controllers/ProductAdminController.cs</url>
+          <line>64</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.AdminMVC\Controllers\ProductAdminController.cs" initialLine="62" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="2182" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2206" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ShopSneaker.AdminMVC/Views/ProductAdmin/Create.cshtml</url>
+          <line>47</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.AdminMVC\Views\ProductAdmin\Create.cshtml" initialLine="43" isMultiMethodBreakpoint="true">
             <option name="multiMethodBreakpoint" value="true" />
             <startOffsets>
               <option value="-1" />
@@ -277,26 +515,20 @@
               <option value="-1" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ShopSneaker.Admin/Controllers/ProductsController.cs</url>
-          <line>21</line>
-          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.Admin\Controllers\ProductsController.cs" initialLine="21" containingFunctionPresentation="Method 'Index'" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ShopSneaker.Admin/Controllers/LoginController.cs</url>
-          <line>27</line>
-          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker.Admin\Controllers\LoginController.cs" initialLine="27" containingFunctionPresentation="Method 'Index'">
+          <url>file://$PROJECT_DIR$/ShopSneaker/Infacture/Services/OrderService.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\Vuong\ShopSneaker\ShopSneaker\Infacture\Services\OrderService.cs" initialLine="33" containingFunctionPresentation="Method 'OrderDetail'">
             <startOffsets>
-              <option value="739" />
+              <option value="919" />
             </startOffsets>
             <endOffsets>
-              <option value="740" />
+              <option value="963" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
