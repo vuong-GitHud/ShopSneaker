@@ -12,5 +12,7 @@ public class MapperConfig : Profile
         CreateMap<ProductVm, Product>();
         CreateMap<Product, UpdateProductVm>();
         CreateMap<UpdateProductVm, Product>();
+        CreateMap<Order, OrderViewModel>();
+        CreateMap<OrderViewModel, Order>();
     }
 }

@@ -9,6 +9,7 @@ namespace ShopSneaker.Identity.Infrastructure.Profiles
         public UserProfile() 
         {
             CreateMap<Users, LoginVm>();
+            CreateMap<Users, UserProfileViewModel>();
         }
     }
 }

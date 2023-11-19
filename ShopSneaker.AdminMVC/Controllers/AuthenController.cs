@@ -71,5 +71,11 @@ namespace ShopSneaker.AdminMVC.Controllers
             }
             return View("Login", request);
         }
+        
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Dashboard");
+        }
     }
 }

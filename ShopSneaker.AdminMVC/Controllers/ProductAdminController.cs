@@ -7,6 +7,7 @@ using ShopSneaker.Areas.Identity.Data;
 using ShopSneaker.Data.Entities;
 using ShopSneaker.Models;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using ProductVm = ShopSneaker.Models.ProductVm;
 
 namespace ShopSneaker.AdminMVC.Controllers
 {
@@ -33,7 +34,7 @@ namespace ShopSneaker.AdminMVC.Controllers
                         from c in pc.DefaultIfEmpty()
                         select new { p, pc, c };
             query = query.OrderByDescending(c => c.p.Id);
-            var data = await query.Select(x => new Model.Product.ProductVm()
+            var data = await query.Select(x => new ProductVm()
             {
                 Id = x.p.Id,
                 Name = x.p.Name,
@@ -50,14 +51,16 @@ namespace ShopSneaker.AdminMVC.Controllers
 
         // GET: ProductController/Create
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var categories = await _context.Categories.ToListAsync();
+            ViewBag.Categories = categories;
             return View();
         }
 
         [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Create(Model.Product.ProductVm model)
+        public async Task<IActionResult> Create(ProductVm model)
         {
             if (model.Files != null)
             {
@@ -71,7 +74,7 @@ namespace ShopSneaker.AdminMVC.Controllers
             }
             model.CreateDate = DateTime.Now;
             model.Rating = 5;
-            _context.Products.Add(_mapper.Map<Product>(model));
+            await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
             return RedirectToAction("Create");
         }
