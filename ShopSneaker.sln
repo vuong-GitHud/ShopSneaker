@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSneaker", "ShopSneaker\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSneaker.Data", "ShopSneaker.Data\ShopSneaker.Data.csproj", "{51DDE0F9-54D8-4B5F-BE96-F5660BA2C1EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSneaker.Admin", "ShopSneaker.Admin\ShopSneaker.Admin.csproj", "{CEF4402E-7B61-4EB3-B13B-D687EAD275CA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSneaker.AdminMVC", "ShopSneaker.AdminMVC\ShopSneaker.AdminMVC.csproj", "{68CFB011-EF5F-4478-8327-D0293CCB513C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSneaker.Identity", "ShopSneaker.Identity\ShopSneaker.Identity.csproj", "{C8BAD138-DDCD-4FA0-9927-EB68B723D6BB}"
@@ -27,10 +25,6 @@ Global
 		{51DDE0F9-54D8-4B5F-BE96-F5660BA2C1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51DDE0F9-54D8-4B5F-BE96-F5660BA2C1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51DDE0F9-54D8-4B5F-BE96-F5660BA2C1EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEF4402E-7B61-4EB3-B13B-D687EAD275CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEF4402E-7B61-4EB3-B13B-D687EAD275CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEF4402E-7B61-4EB3-B13B-D687EAD275CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEF4402E-7B61-4EB3-B13B-D687EAD275CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68CFB011-EF5F-4478-8327-D0293CCB513C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68CFB011-EF5F-4478-8327-D0293CCB513C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CFB011-EF5F-4478-8327-D0293CCB513C}.Release|Any CPU.ActiveCfg = Release|Any CPU
