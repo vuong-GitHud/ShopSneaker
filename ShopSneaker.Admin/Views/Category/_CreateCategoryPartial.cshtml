@@ -1,0 +1,53 @@
+﻿
+<div class="nk-add-product toggle-slide toggle-slide-right" data-content="addCategory" data-toggle-screen="any" data-toggle-overlay="true" data-toggle-body="true" data-simplebar>
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h5 class="nk-block-title">New Category</h5>
+            <div class="nk-block-des">
+                <p>Add information and add new Category.</p>
+            </div>
+        </div>
+    </div><!-- .nk-block-head -->
+    <form asp-action="Create" asp-controller="Category" method="post">
+        <div class="nk-block">
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="id">Category Title</label>
+                        <div class="form-control-wrap">
+                            <input type="text" class="form-control" id="id">
+                        </div>
+                    </div>
+                </div>             
+                <div class="col-mb-6">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Name</label>
+                        <div class="form-control-wrap">
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="form-label" for="description">Description</label>
+                        <div class="form-control-wrap">
+                            <input type="text" class="form-control" id="description">
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-12">
+                    <div class="upload-zone small bg-lighter my-2">
+                        <div class="dz-message">
+                            <span class="dz-message-text">Drag and drop file</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary">
+                        <em class="icon ni ni-plus"></em><span>Add New</span>
+                    </button>
+                </div>
+            </div>
+        </div><!-- .nk-block -->
+    </form>
+</div>

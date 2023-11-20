@@ -31,7 +31,7 @@ public class OrderService : IOrderService
 
         return new OrderViewModel()
         {
-            TotalOrderMonth = totalMonth.Count(),
+            TotalOrderMonth = order.Count(),
             TotalRevenue = revenue.Sum(r => r.Amount),
             Orders = order.Take(5).ToList(),
         };

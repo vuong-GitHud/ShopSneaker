@@ -16,8 +16,7 @@ namespace ShopSneaker.Identity.Database
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                "Server=DESKTOP-DHG9R36;Database=Identity;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-0GE2QP6;Database=IdentityDbContext;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -91,7 +90,8 @@ namespace ShopSneaker.Identity.Database
                 entity.Ignore(k => k.Roles);
             });
 
-            modelBuilder.Entity<Roles>(entity => {
+            modelBuilder.Entity<Roles>(entity =>
+            {
                 entity.ToTable("Roles");
                 entity.Ignore(k => k.SubordinateRoles);
                 entity.Property(k => k.Id).ValueGeneratedOnAdd();
@@ -99,14 +99,16 @@ namespace ShopSneaker.Identity.Database
                 entity.Property(k => k.Name).HasMaxLength(30);
             });
 
-            modelBuilder.Entity<UserRoles>(entity => {
+            modelBuilder.Entity<UserRoles>(entity =>
+            {
                 entity.ToTable("UserRoles");
                 entity.HasKey(k => new { k.UserId, k.RoleId });
                 entity.HasOne(k => k.User).WithMany(k => k.UserRoles).HasForeignKey(k => k.UserId);
                 entity.HasOne(k => k.Role).WithMany(k => k.UserRoles).HasForeignKey(k => k.RoleId);
             });
 
-            modelBuilder.Entity<RoleControls>(entity => {
+            modelBuilder.Entity<RoleControls>(entity =>
+            {
                 entity.ToTable("RoleControls");
                 entity.HasKey(k => new { k.SuperiorFid, k.SubordinateFid });
                 entity.Property(k => k.SuperiorFid).HasColumnName("SuperiorFid");

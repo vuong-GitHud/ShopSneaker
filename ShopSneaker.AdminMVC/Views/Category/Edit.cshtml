@@ -1,0 +1,57 @@
+﻿﻿@using ShopSneaker.Data.Entities;
+@using ShopSneaker.Models;
+@model CategoryVm
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head-content">
+                    <h3 class="nk-block-title page-title">Edit Category</h3>
+                </div>
+                <form asp-action="Edit" asp-controller="Category" method="post">
+                    <input asp-for="Id" hidden />
+                    <div class="nk-block">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="Id">Category ID</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="product-title" asp-for="Id">
+                                        <span class="text-danger" asp-validation-for="Id"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="product-title">Category Title</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="product-title" asp-for="Name">
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-mb-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="sale-price">Description</label>
+                                    <div class="form-control-wrap">
+                                        <input type="text" class="form-control" id="sale-price" asp-for="Description">
+                                        <span class="text-danger" asp-validation-for="Description"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary">
+                                    <span>Save</span>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button href="@Url.Action("Index")" class="btn btn-primary">
+                                    <span>Back</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
