@@ -7,79 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\sass\.sass-cache\**" />
+    <Content Remove="wwwroot\sass\.sass-cache\**" />
+    <EmbeddedResource Remove="wwwroot\sass\.sass-cache\**" />
+    <None Remove="wwwroot\sass\.sass-cache\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\about.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\account.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\blog.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\cart.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\checkout.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\contact.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\error_track.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\faq.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\home_1.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\leave_review.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\listing.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\product_page.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\style.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_mixin.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\15d0ecb28ac2ebbde0040e5fc526352bdf258014\_variables.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\about.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\account.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\blog.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\cart.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\checkout.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-aqua.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-beige.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-blue.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-gray.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green-2.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-green.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-navy.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-orange.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-peach.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-purple.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-red.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\color-violet.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\contact.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\error_track.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\faq.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\home_1.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\leave_review.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\listing.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\product_page.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\style.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_mixin.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\88f1a43e306575aea8bb85e05b5052189db545b1\_variables.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\about.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\account.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\blog.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\cart.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\checkout.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\contact.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\error_track.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\faq.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\home_1.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\leave_review.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\listing.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\product_page.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\style.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_mixin.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\9863ecefae601619269a32b4941e7b84b0edf77b\_variables.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\about.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\account.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\blog.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\cart.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\checkout.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\contact.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\error_track.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\faq.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\home_1.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\leave_review.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\listing.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\product_page.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\style.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_mixin.scssc" />
-    <None Include="wwwroot\sass\.sass-cache\d5be94b20f515087bc58d10d758093c0e3411be6\_variables.scssc" />
   </ItemGroup>
 
   <ItemGroup>

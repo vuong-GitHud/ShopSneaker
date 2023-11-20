@@ -76,7 +76,19 @@ namespace ShopSneaker.AdminMVC.Controllers
             model.Rating = 5;
             await _context.Products.AddAsync(_mapper.Map<Product>(model));
             await _context.SaveChangesAsync();
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
+        }
+        // GET: ProductController/Details/5
+        public ActionResult Detail(int id)
+        {
+            //var query = from p in _context.Products
+            //            join c in _context.Categories on p.CategoryId equals c.Id into pc
+            //            from c in pc.DefaultIfEmpty()
+            //            where p.Id == id
+            //            select new { p, pc, c };
+            //var result = query.FirstOrDefault();
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            return View(product);
         }
 
         [HttpGet]

@@ -24,7 +24,7 @@
             <div class="nk-sidebar nk-sidebar-fixed is-light " data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
-                        <a href="html/index.html" class="logo-link nk-sidebar-logo">
+                        <a href="@Url.Action("Index", "Product")" class="logo-link nk-sidebar-logo">
                             <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                             <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                             <img class="logo-small logo-img logo-img-small" src="./images/logo-small.png" srcset="./images/logo-small2x.png 2x" alt="logo-small">
@@ -40,7 +40,7 @@
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/index.html" class="nk-menu-link">
+                                    <a href="#" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
                                     </a>
@@ -52,13 +52,13 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/products.html" class="nk-menu-link">
+                                    <a asp-controller="Product" asp-action="Index" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-package-fill"></em></span>
                                         <span class="nk-menu-text">Products</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/ecommerce/customers.html" class="nk-menu-link">
+                                    <a href="@Url.Action("Index", "Category")" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
                                         <span class="nk-menu-text">Customers</span>
                                     </a>

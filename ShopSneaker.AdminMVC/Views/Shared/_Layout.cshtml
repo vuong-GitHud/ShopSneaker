@@ -388,8 +388,7 @@
                                                     @if (User.Identity.IsAuthenticated)
                                                     {
                                                         <div class="user-info">
-                                                            <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                            <span class="sub-text">info@softnio.com</span>
+                                                            <span class="lead-text">@User.Identity.Name</span>
                                                         </div>
                                                     }
                                                 </div>
