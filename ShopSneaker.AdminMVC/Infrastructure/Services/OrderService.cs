@@ -12,6 +12,8 @@ public class OrderService : IOrderService
     {
         _context = context;
     }
+    //Total Orders Monthly
+    //Revenue Monthly
 
     public async Task<OrderViewModel> GetOrder()
     {
@@ -31,21 +33,23 @@ public class OrderService : IOrderService
 
         return new OrderViewModel()
         {
-            TotalOrderMonth = order.Count(),
+            TotalOrderMonth = totalMonth.Count(),
             TotalRevenue = revenue.Sum(r => r.Amount),
             Orders = order.Take(5).ToList(),
         };
     }
+    /// Sales Statistics admin
 
-    public async Task<DashBoardViewModel> GetDashBoard()
+       public async Task<DashBoardViewModel> GetDashBoard()
     {
         var revenueMonthly = await _context.Orders.Where(o => o.OrderDate.Year == DateTime.Now.Year && o.isPayment)
-            .GroupBy(o => o.OrderDate.Month).Select(g => new RevenueMonthly()
+            .GroupBy(o => o.OrderDate.Month).Select(g => new RevenueMonthly() //month/day/
             {
                 X = g.Key,
                 Y = g.Sum(o => o.Amount)
             }).ToListAsync();
-        
+
+        //Order Statistics
         var monthlyRevenue = DateTime.Now.AddDays(-30);
         var now = DateTime.Now;
         var query = from o in _context.Orders

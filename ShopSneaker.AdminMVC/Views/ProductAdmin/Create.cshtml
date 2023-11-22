@@ -19,7 +19,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="product-title">Product Title</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="product-title" asp-for="Name">
+                                        <input type="text" class="form-control" id="product-title" asp-for="Name" required>
                                     </div>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="regular-price">Price</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="regular-price" asp-for="Price">
+                                        <input type="text" class="form-control" id="regular-price" asp-for="Price" required>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="sale-price">Description</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" class="form-control" id="sale-price" asp-for="Description">
+                                        <input type="text" class="form-control" id="sale-price" asp-for="Description" required>
                                     </div>
                                 </div>
                             </div>
@@ -47,14 +47,14 @@
                                             <option>Select</option>
                                         @foreach (var item in category)
                                         {
-                                            <option value="@item.Id">@item.Name</option>
+                                                <option value="@item.Id">@item.Name</option>
                                         }
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <input type="file" asp-for="Files" />
+                                <input type="file" asp-for="Files" required />
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">

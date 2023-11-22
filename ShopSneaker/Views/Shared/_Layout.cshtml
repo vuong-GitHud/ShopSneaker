@@ -73,18 +73,18 @@
 									<a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
 								</div>
 								<ul>
-									<li class="submenu">
-										<a href="javascript:void(0);" class="show-submenu">Home</a>
-										<ul>
+									<li @*class="submenu"*@>
+										<a href="@Url.Action("Index", "Home")">Home</a>
+										@*<ul>
 											<li><a href="index.html">Slider</a></li>
 											<li><a href="index-2.html">Video Background</a></li>
 											<li><a href="index-3.html">Vertical Slider</a></li>
 											<li><a href="index-4.html">GDPR Cookie Bar</a></li>
-										</ul>
+										</ul>*@
 									</li>
-									<li class="megamenu submenu">
+									<li @*class="megamenu submenu"*@>
 										<a href="javascript:void(0);" class="show-submenu-mega">Pages</a>
-										<div class="menu-wrapper">
+										@*<div class="menu-wrapper">
 											<div class="row small-gutters">
 												<div class="col-lg-3">
 													<h3>Listing grid</h3>
@@ -132,12 +132,12 @@
 												</div>
 											</div>
 											<!-- /row -->
-										</div>
+										</div>*@
 										<!-- /menu-wrapper -->
 									</li>
-									<li class="submenu">
+									<li @*class="submenu"*@>
 										<a href="javascript:void(0);" class="show-submenu">Extra Pages</a>
-										<ul>
+										@*<ul>
 											<li><a href="header-2.html">Header Style 2</a></li>
 											<li><a href="header-3.html">Header Style 3</a></li>
 											<li><a href="header-4.html">Header Style 4</a></li>
@@ -149,21 +149,18 @@
 											<li><a href="about-2.html">About 2</a></li>
 											<li><a href="modal-advertise.html">Modal Advertise</a></li>
 											<li><a href="modal-newsletter.html">Modal Newsletter</a></li>
-										</ul>
+										</ul>*@
 									</li>
 									<li>
 										<a href="@Url.Action("Login","AuthenCustomer")">Blog</a>
 									</li>
 									<li>
-										<a href="#0">Buy Template</a>
+										<a href="@Url.Action("Login","AuthenCustomer")">Buy Template</a>
 									</li>
 								</ul>
 							</div>
 							<!--/main-menu -->
 						</nav>
-						<div class="col-xl-3 col-lg-2 d-lg-flex align-items-center justify-content-end text-end">
-							<a class="phone_top" href="tel://9438843343"><strong><span>Need Help?</span>+94 423-23-221</strong></a>
-						</div>
 					</div>
 					<!-- /row -->
 				</div>
@@ -176,7 +173,7 @@
 						<div class="col-xl-3 col-lg-3 col-md-3">
 							<nav class="categories">
 								<ul class="clearfix">
-									<li>
+									@*<li>
 										<span>
 											<a href="#">
 												<span class="hamburger hamburger--spin">
@@ -247,7 +244,7 @@
 												</li>
 											</ul>
 										</div>
-									</li>
+									</li>*@
 								</ul>
 							</nav>
 						</div>

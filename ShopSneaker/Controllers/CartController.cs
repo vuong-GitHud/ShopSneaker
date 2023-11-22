@@ -104,5 +104,9 @@ namespace ShopSneaker.Controllers
             
             return Json(addToCartResult);
         }
+        //public async Task<IActionResult> Delete (String UserId)
+        //{
+
+        //}
     }
 }
