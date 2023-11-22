@@ -38,10 +38,11 @@ public class OrderService : IOrderService
             Orders = order.Take(5).ToList(),
         };
     }
-    /// Sales Statistics admin
+    
 
        public async Task<DashBoardViewModel> GetDashBoard()
     {
+        /// Sales Statistics admin
         var revenueMonthly = await _context.Orders.Where(o => o.OrderDate.Year == DateTime.Now.Year && o.isPayment)
             .GroupBy(o => o.OrderDate.Month).Select(g => new RevenueMonthly() //month/day/
             {
